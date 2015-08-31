@@ -36,8 +36,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('clean', function() {
-  gulp.src('dist')
-    .pipe(clean());
+  del(['dist/**/*'])
 });
 
 gulp.task('watch', function() {
