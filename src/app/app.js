@@ -1,9 +1,9 @@
 import {Observable} from 'rx';
-import Cycle from '@cycle/core';
-import {div, input, h1, makeDOMDriver} from '@cycle/dom';
+import {run} from '@cycle/core';
+import {div, input, h1, p, makeDOMDriver} from '@cycle/dom';
 
 
-// Adjective Input
+// Adjective Input Component
 
 function AdjectiveInput(sources) {
 
@@ -15,12 +15,9 @@ function AdjectiveInput(sources) {
 
   const vtree$ = inputValue$
     .map(value =>
-      div([
-        h1(`Cycle is ${value}`),
-        input('#adjectiveInput', {
-          type: 'text'
-        })
-      ])
+      input('#adjectiveInput', {
+        type: 'text', autofocus: true
+      })
     );
 
   const sinks = {
@@ -32,32 +29,52 @@ function AdjectiveInput(sources) {
 }
 
 
-// Top Level
+// Sentence Component
 
-function main(responses) {
+function Sentence(sources) {
 
-  const title$ = Observable.just('Cycle. js Starter');
+  const {adjective$} = sources.prop$;
 
-  const adjectiveInput = AdjectiveInput({DOM: responses.DOM});
-  const adjectiveInputVTree$ = adjectiveInput.DOM;
-  const adjectiveInputValue$ = adjectiveInput.inputValue$;
+  const vtree$ = adjective$
+    .map(v => !v.length ? '...' : v)
+    .map(v => h1(`Cycle is ${v}`));
 
-  const vTree$ = Observable
-    .combineLatest(
-      title$,
-      adjectiveInputVTree$,
-      (title, inputVTree) =>
-        div([
-          inputVTree
-        ])
-    );
-
-  return {
-    DOM: vTree$
+  const sinks = {
+    DOM: vtree$
   };
+
+  return sinks;
 }
 
 
-Cycle.run(main, {
-  DOM: makeDOMDriver('#app')
-});
+// Top Level
+
+function App(sources) {
+
+  const adjectiveInputComponent = AdjectiveInput({DOM: sources.DOM});
+  const adjectiveInputVTree$ = adjectiveInputComponent.DOM;
+  const adjectiveInputValue$ = adjectiveInputComponent.inputValue$;
+
+  const sentenceSources = {DOM: sources.DOM, prop$: {adjective$: adjectiveInputValue$}};
+  const sentenceComponent = Sentence(sentenceSources);
+  const sentenceVTree$ = sentenceComponent.DOM;
+
+  const vtree$ = Observable
+    .combineLatest(
+      adjectiveInputVTree$,
+      sentenceVTree$,
+      (inputVTree, sentenceVTree) => div([
+        sentenceVTree,
+        inputVTree
+      ])
+    );
+
+  const sinks = {
+    DOM: vtree$
+  };
+
+  return sinks;
+}
+
+
+run(App, {DOM: makeDOMDriver('#app')});
