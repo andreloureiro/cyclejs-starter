@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "serve": "webpack-dev-server --progress --inline",
-    "start": "npm install & npm run serve",
+    "start": "npm install && npm run serve",
     "build": "webpack"
   },
   "author": "Andre Loureiro",
