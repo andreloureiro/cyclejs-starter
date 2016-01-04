@@ -1,6 +1,6 @@
 {
   "name": "cyclejs-starter",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Cycle.js starter template with ES6 and Livereload.",
   "repository": {
     "type": "git",
