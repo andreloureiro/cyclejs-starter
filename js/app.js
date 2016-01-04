@@ -4,7 +4,6 @@ import {div, input, h1, p, makeDOMDriver} from '@cycle/dom';
 
 
 // Adjective Input Component
-
 function AdjectiveInput(sources) {
 
   const inputValue$ = sources.DOM
