@@ -2,14 +2,26 @@
 
 This is a simple starter template for [Cycle.js](http://cycle.js.org/) apps.
 
+
 ## Installing
 
 From the command line:
 
-`git clone https://github.com/andreloureiro/cyclejs-starter && npm start`
+`git clone https://github.com/andreloureiro/cyclejs-starter && cd cyclejs-starter && npm run start`
 
-Then:
 
-`npm run app`
+## Usage
 
-On your favorite browser, hit `http://localhost:8080`. If you get the **Cycle.js Starter** title, you're ready to create a great Cycle.js app!
+### Development
+
+You can serve a local server at `http://localhost:8080` for your application with `npm run serve`. This uses [Webpack](https://webpack.github.io/) and provides live reloading (not hot reload) out of the box.
+
+
+### Production
+
+Build a production ready version of your app into `dist/bundle.js` using `npm run build`.
+
+
+## License
+
+MIT
