@@ -10,11 +10,11 @@ function App(sources) {
   const adjectiveInputVTree$ = adjectiveInputComponent.DOM;
   const adjectiveInputValue$ = adjectiveInputComponent.inputValue$;
 
-  const sentenceSources = {DOM: sources.DOM, prop$: {adjective$: adjectiveInputValue$}};
+  const sentenceSources = {DOM: sources.DOM, prop$: {adjectiveInputValue$}};
   const sentenceComponent = Sentence(sentenceSources);
   const sentenceVTree$ = sentenceComponent.DOM;
 
-  const vtree$ = Observable
+  const vTree$ = Observable
         .combineLatest(
           adjectiveInputVTree$,
           sentenceVTree$,
@@ -27,7 +27,7 @@ function App(sources) {
         );
 
   const sinks = {
-    DOM: vtree$
+    DOM: vTree$
   };
 
   return sinks;

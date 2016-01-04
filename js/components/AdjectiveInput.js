@@ -10,7 +10,7 @@ function AdjectiveInput(sources) {
     .map(e => e.target.value)
     .startWith('');
 
-  const vtree$ = Observable.just(
+  const vTree$ = Observable.just(
     input('#adjectiveInput', {
       type: 'text',
       autofocus: true,
@@ -19,7 +19,7 @@ function AdjectiveInput(sources) {
   );
 
   const sinks = {
-    DOM: vtree$,
+    DOM: vTree$,
     inputValue$
   };
 
