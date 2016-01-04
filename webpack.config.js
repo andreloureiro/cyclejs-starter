@@ -1,6 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var ENV = process.env.NODE_ENV;
+
 module.exports = {
   entry: ['./js/main'],
   output: {
@@ -15,5 +17,8 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
-  }
+  },
+  plugins: (ENV == 'production'
+            ? [new webpack.optimize.UglifyJsPlugin({minimize: true})]
+            : [])
 };
