@@ -14,7 +14,7 @@ From the command line:
 
 ### Development
 
-You can serve a local server at `http://localhost:8080` for your application with `npm run serve`. This uses [Webpack](https://webpack.github.io/) and provides live reloading (not hot reload) out of the box.
+You can start a local server at `http://localhost:8080` for your application with `npm run serve`. It uses [Webpack](https://webpack.github.io/) and provides live reloading (not hot reload) out of the box.
 
 
 ### Production
