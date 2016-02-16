@@ -32,6 +32,8 @@
   "dependencies": {
     "@cycle/core": "^6.0.0",
     "@cycle/dom": "^8.0.0",
+    "@cycle/isolate": "^1.2.0",
+    "cycle-restart": "0.0.9",
     "rx": "^4.0.7"
   }
 }
