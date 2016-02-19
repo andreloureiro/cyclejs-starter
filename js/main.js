@@ -12,10 +12,8 @@ const {sinks, sources} = run( App, drivers );
 
 if (module.hot) {
   module.hot.accept('./components/App', () => {
-    app = require('./components/App' ).default;
-
+    const app = require('./components/App' ).default;
     restart(app, drivers, {sinks, sources}, isolate);
-    console.log( 'restarted' );
   });
 
 }
