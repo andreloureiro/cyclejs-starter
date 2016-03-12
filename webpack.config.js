@@ -4,7 +4,15 @@ var webpack = require('webpack');
 var ENV = process.env.NODE_ENV;
 
 module.exports = {
-  entry: ['./js/main'],
+  entry: ( ENV == 'production' ?
+           ['./js/main']
+           :
+           [
+            'webpack-dev-server/client?http://localhost:8080',
+            'webpack/hot/dev-server',
+            './js/main'
+           ]
+  ),
   output: {
     filename: './dist/bundle.js'
   },
@@ -18,7 +26,15 @@ module.exports = {
       }
     ]
   },
-  plugins: (ENV == 'production'
-            ? [new webpack.optimize.UglifyJsPlugin({minimize: true})]
-            : [])
+  plugins: ( ENV == 'production' ?
+             [
+              new webpack.optimize.UglifyJsPlugin({minimize: true}),
+             ]
+             :
+             [new webpack.HotModuleReplacementPlugin()]
+  ),
+  devServer: {
+    contentBase: './',
+    hot: true
+  }
 };

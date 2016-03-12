@@ -7,14 +7,14 @@ This is a simple starter template for [Cycle.js](http://cycle.js.org/) apps.
 
 From the command line:
 
-`git clone https://github.com/andreloureiro/cyclejs-starter && cd cyclejs-starter && npm run start`
+`git clone https://github.com/feliciousx/cyclejs-starter && cd cyclejs-starter && npm run start`
 
 
 ## Usage
 
 ### Development
 
-You can start a local server at `http://localhost:8080` for your application with `npm run serve`. It uses [Webpack](https://webpack.github.io/) and provides live reloading (not hot reload) out of the box.
+You can start a local server at `http://localhost:8080` for your application with `npm run serve`. It uses [Webpack](https://webpack.github.io/) and provides hot reloading out of the box.
 
 
 ### Production

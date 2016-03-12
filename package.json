@@ -1,10 +1,10 @@
 {
   "name": "cyclejs-starter",
   "version": "2.0.0",
-  "description": "Cycle.js starter template with ES6 and Livereload.",
+  "description": "Cycle.js starter template with ES6 and hotreload.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andreloureiro/cyclejs-starter"
+    "url": "https://github.com/FeliciousX/cyclejs-starter"
   },
   "keywords": [
     "reactive",
@@ -32,6 +32,8 @@
   "dependencies": {
     "@cycle/core": "^6.0.0",
     "@cycle/dom": "^8.0.0",
+    "@cycle/isolate": "^1.2.0",
+    "cycle-restart": "0.0.9",
     "rx": "^4.0.7"
   }
 }
