@@ -7,7 +7,7 @@ This is a simple starter template for [Cycle.js](http://cycle.js.org/) apps.
 
 From the command line:
 
-`git clone https://github.com/feliciousx/cyclejs-starter && cd cyclejs-starter && npm run start`
+`git clone https://github.com/andreloureiro/cyclejs-starter && cd cyclejs-starter && npm run start`
 
 
 ## Usage
