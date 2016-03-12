@@ -1,10 +1,10 @@
 {
   "name": "cyclejs-starter",
   "version": "2.0.0",
-  "description": "Cycle.js starter template with ES6 and hotreload.",
+  "description": "Cycle.js starter template with ES6 and hot reload.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FeliciousX/cyclejs-starter"
+    "url": "https://github.com/andreloureiro/cyclejs-starter"
   },
   "keywords": [
     "reactive",
