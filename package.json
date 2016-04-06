@@ -16,7 +16,7 @@
     "virtual-dom"
   ],
   "scripts": {
-    "serve": "webpack-dev-server --progress --colors --inline",
+    "serve": "webpack-dev-server -d --progress --colors --inline",
     "start": "npm install && npm run serve",
     "build": "NODE_ENV=production webpack"
   },
