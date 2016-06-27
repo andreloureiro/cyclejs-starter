@@ -32,10 +32,12 @@
   },
   "dependencies": {
     "@cycle/core": "^6.0.0",
-    "@cycle/dom": "^8.0.0",
-    "@cycle/isolate": "^1.2.0",
+    "@cycle/dom": "^8.1.0",
+    "@cycle/isolate": "^1.4.0",
+    "@cycle/xstream-run": "^3.0.3",
     "cycle-restart": "0.0.9",
     "ramda": "^0.21.0",
-    "rx": "^4.0.7"
+    "rx": "^4.0.7",
+    "xstream": "^5.0.6"
   }
 }
