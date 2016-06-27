@@ -1,20 +1,11 @@
-import {run} from '@cycle/core';
-import {makeDOMDriver} from '@cycle/dom';
-import {isolate} from '@cycle/isolate';
-import {restart, restartable} from 'cycle-restart';
-import App from './components/App';
+import {run} from '@cycle/xstream-run'
+import {makeDOMDriver} from '@cycle/dom'
+import {isolate} from '@cycle/isolate'
+import {restart, restartable} from 'cycle-restart'
+import BMI from './examples/bmi'
 
 const drivers = {
-  DOM: restartable(makeDOMDriver('#root'), {pauseSinksWhileReplaying: false})
+  DOM: makeDOMDriver('#root')
 };
 
-const {sinks, sources} = run( App, drivers );
-
-if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    const app = require('./components/App' ).default;
-    restart(app, drivers, {sinks, sources}, isolate);
-  });
-
-}
-
+run(BMI, drivers)
