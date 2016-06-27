@@ -22,6 +22,14 @@ You can start a local server at `http://localhost:8080` for your application wit
 Build a production ready version of your app into `dist/bundle.js` using `npm run build`.
 
 
+## Utils
+
+- [Cycle.js](http://cycle.js.org)
+- [Getting Started (Cycle.js)](http://cycle.js.org/getting-started.html)
+- [xstream](http://staltz.com/xstream/)
+- [xstream API](https://github.com/staltz/xstream)
+
+
 ## License
 
 MIT
