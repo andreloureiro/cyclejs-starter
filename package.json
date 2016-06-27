@@ -23,21 +23,19 @@
   "author": "Andre Loureiro",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.3.26",
-    "babel-loader": "^6.2.0",
-    "babel-preset-es2015": "^6.3.13",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.5.0",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "@cycle/core": "^6.0.0",
-    "@cycle/dom": "^8.1.0",
+    "@cycle/dom": "^10.0.2",
     "@cycle/isolate": "^1.4.0",
     "@cycle/xstream-run": "^3.0.3",
-    "cycle-restart": "0.0.9",
-    "ramda": "^0.21.0",
-    "rx": "^4.0.7",
+    "cycle-restart": "0.0.14",
     "xstream": "^5.0.6"
   }
 }
