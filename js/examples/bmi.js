@@ -65,10 +65,8 @@ export default sources => {
 
   const bmi$ = xs.combine(weightValue$, heightValue$)
     .map(([weight, height]) => {
-      console.log(weight, height)
       const heightMeters = height * 0.01
       const bmi = Math.round(weight / (heightMeters * heightMeters))
-      console.log(bmi)
       return bmi
     })
     .remember()
