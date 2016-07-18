@@ -34,7 +34,6 @@
     "@cycle/dom": "^10.0.2",
     "@cycle/isolate": "^1.4.0",
     "@cycle/xstream-run": "^3.0.3",
-    "cycle-restart": "0.0.14",
     "xstream": "^5.0.6"
   }
 }
