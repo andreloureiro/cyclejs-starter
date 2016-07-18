@@ -31,7 +31,6 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "@cycle/core": "^6.0.0",
     "@cycle/dom": "^10.0.2",
     "@cycle/isolate": "^1.4.0",
     "@cycle/xstream-run": "^3.0.3",
