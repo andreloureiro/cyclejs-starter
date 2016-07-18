@@ -1,5 +1,5 @@
-import xs from 'xstream'
-import {div, input, h1} from '@cycle/dom'
+import xs from 'xstream';
+import {div, input, h1} from '@cycle/dom';
 
 const intent = sources => ({
   inputValue$: sources.DOM
@@ -7,11 +7,11 @@ const intent = sources => ({
     .events('input')
     .map(e => e.target.value)
     .startWith('')
-})
+});
 
 const model = action =>
   action.inputValue$
-    .map(v => `Hello ${v}`)
+    .map(v => `Hello ${v}`);
 
 
 const view = state =>
@@ -19,8 +19,8 @@ const view = state =>
     div([
       h1(sentence),
       input('#input', {attrs: {type: 'text'}})
-    ]))
+    ]));
 
 export default sources => ({
   DOM: view(model(intent(sources)))
-})
+});
