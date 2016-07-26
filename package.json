@@ -34,6 +34,9 @@
     "@cycle/dom": "^10.0.2",
     "@cycle/isolate": "^1.4.0",
     "@cycle/xstream-run": "^3.0.3",
+    "cyclic-router": "^2.1.2",
+    "history": "^3.0.0",
+    "ramda": "^0.21.0",
     "xstream": "^5.0.6"
   }
 }
