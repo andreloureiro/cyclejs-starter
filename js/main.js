@@ -1,10 +1,12 @@
 import {run} from '@cycle/xstream-run';
 import {makeDOMDriver} from '@cycle/dom';
-import BMI from './examples/bmi';
-import Hello from './examples/hello-world';
+import {createHistory} from 'history';
+import {makeRouterDriver} from 'cyclic-router';
+import Main from './root';
 
 const drivers = {
-  DOM: makeDOMDriver('#root')
+  DOM: makeDOMDriver('#root'),
+  router: makeRouterDriver(createHistory(), {capture: true})
 };
 
-run(BMI, drivers);
+run(Main, drivers);
