@@ -1,15 +1,27 @@
 import xs from 'xstream';
-import {div, nav, a} from '@cycle/dom';
+import {div, nav, a, h3, p} from '@cycle/dom';
 import {merge, prop} from 'ramda';
 import BMI from '../../examples/bmi';
 import Hello from '../../examples/hello-world';
+
+function NotFound(sources) {
+  const vdom$ = xs.of(div([
+    h3('Page not found'),
+    p('Please click on the links above to check the examples.')
+  ]));
+
+  return {
+    DOM: vdom$
+  };
+}
 
 export default function Router(sources) {
   const {router} = sources;
 
   const match$ = router.define({
     '/bmi': BMI,
-    '/hello': Hello
+    '/hello': Hello,
+    '*': NotFound
   });
 
   const page$ = match$.map(({path, value}) => value(merge(sources, {
@@ -27,9 +39,8 @@ export default function Router(sources) {
 
   const vdom$ = xs.combine(nav$, view$)
     .map(([navDom, viewDom]) => div([navDom, viewDom]));
-    
-  return {
-    DOM: vdom$,
-    router: xs.of('/bmi')
-  }
+
+  const sinks = merge(sources, {DOM: vdom$});
+
+  return sinks;
 }
