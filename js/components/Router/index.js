@@ -40,7 +40,7 @@ export default function Router(sources) {
   const vdom$ = xs.combine(nav$, view$)
     .map(([navDom, viewDom]) => div([navDom, viewDom]));
 
-  const sinks = merge(sources, {DOM: vdom$});
-
-  return sinks;
+  return {
+    DOM: vdom$
+  }
 }
