@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@cycle/dom": "^10.0.2",
+    "@cycle/http": "^11.2.0",
     "@cycle/isolate": "^1.4.0",
     "@cycle/xstream-run": "^3.0.3",
     "cyclic-router": "^2.1.2",
