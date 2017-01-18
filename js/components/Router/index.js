@@ -41,6 +41,7 @@ export default function Router(sources) {
     .map(([navDom, viewDom]) => div([navDom, viewDom]));
 
   return {
-    DOM: vdom$
+    DOM: vdom$,
+    HTTP: page$.map(prop('HTTP')).filter(Boolean).flatten()
   }
 }
