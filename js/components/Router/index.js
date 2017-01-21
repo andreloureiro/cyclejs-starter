@@ -3,6 +3,7 @@ import {div, nav, a, h3, p} from '@cycle/dom';
 import {merge, prop} from 'ramda';
 import BMI from '../../examples/bmi';
 import Hello from '../../examples/hello-world';
+import {HttpRequest} from "../../examples/http-request";
 
 function NotFound(sources) {
   const vdom$ = xs.of(div([
@@ -21,6 +22,7 @@ export default function Router(sources) {
   const match$ = router.define({
     '/bmi': BMI,
     '/hello': Hello,
+    '/http': HttpRequest,
     '*': NotFound
   });
 
@@ -32,7 +34,8 @@ export default function Router(sources) {
 
   const nav$ = xs.of(nav({style: {marginBottom: '1em'}}, [
     makeLink('/bmi', 'BMI'),
-    makeLink('/hello', 'Hello')
+    makeLink('/hello', 'Hello'),
+    makeLink('/http', 'Http'),
   ]));
 
   const view$ = page$.map(prop('DOM')).flatten();
@@ -41,6 +44,7 @@ export default function Router(sources) {
     .map(([navDom, viewDom]) => div([navDom, viewDom]));
 
   return {
-    DOM: vdom$
+    DOM: vdom$,
+    HTTP: page$.map(prop('HTTP')).filter(Boolean).flatten()
   }
 }
